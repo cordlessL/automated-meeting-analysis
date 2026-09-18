@@ -197,7 +197,7 @@ def create_assemblyai_transcript(upload_url: str, api_key: str) -> str:
     headers = {"authorization": api_key, "content-type": "application/json"}
     payload = {
         "audio_url": upload_url,
-        "speech_model": "best",
+        "speech_models": ["universal-3-5-pro", "universal-2"],
     }
     response = requests.post(
         ASSEMBLYAI_TRANSCRIPT_URL,
